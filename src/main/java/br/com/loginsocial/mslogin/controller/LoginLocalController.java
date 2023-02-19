@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/auth")
-public class UserController {
+public class LoginLocalController {
     @Autowired
     private AuthenticationService authenticationService;
 
