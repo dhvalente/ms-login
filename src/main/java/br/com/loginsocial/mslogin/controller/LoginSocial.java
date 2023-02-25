@@ -1,8 +1,9 @@
 package br.com.loginsocial.mslogin.controller;
 
+
+import org.springframework.stereotype.Controller;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ResolvableType;
 import org.springframework.http.HttpEntity;
@@ -14,14 +15,13 @@ import org.springframework.security.oauth2.client.OAuth2AuthorizedClientService;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.oauth2.client.registration.ClientRegistration;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.client.RestTemplate;
 
 @Controller
-public class LoginController {
+public class LoginSocial {
 
     private static final String authorizationRequestBaseUri = "oauth2/authorize-client";
     Map<String, String> oauth2AuthenticationUrls = new HashMap<>();
@@ -45,6 +45,7 @@ public class LoginController {
 
         return "oauth_login";
     }
+
 
     @GetMapping("/loginSuccess")
     public String getLoginInfo(Model model, OAuth2AuthenticationToken authentication) {

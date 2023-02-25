@@ -1,5 +1,6 @@
 package br.com.loginsocial.mslogin.model;
 
+import br.com.loginsocial.mslogin.enums.Provider;
 import br.com.loginsocial.mslogin.enums.RoleEnum;
 import jakarta.persistence.*;
 import lombok.*;
@@ -32,7 +33,8 @@ public class UserModel implements UserDetails {
     private String cpf;
     private String password;
 
-
+    @Enumerated(EnumType.STRING)
+    private Provider provider;
 
     public UserModel(Long id,String email,String cpf, String password) {
         this.email = email;
